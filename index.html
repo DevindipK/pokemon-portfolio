@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokémon Battle Portfolio</title>
+  <link rel="stylesheet" href="battle-style.css"/>
+</head>
+<body>
+
+  <!-- LOADING / INTRO -->
+  <div id="loading-screen">
+    <h1>Devindip Presents a Personal Pokémon-Stylized Portfolio</h1>
+    <img src="assets/images/Pokemon/pikachu-intro.gif" alt="Pikachu Intro" class="intro-pikachu"/>
+    <p class="tap-hint">(click anywhere to begin)</p>
+  </div>
+
+  <!-- BATTLE SCREEN -->
+  <div id="battle-screen" style="display:none;">
+
+    <!-- Trainers -->
+    <img id="ash-trainer"
+         src="assets/images/Trainers/ash-standing.png"
+         class="trainer player" alt="Ash"/>
+    <img id="gary-trainer"
+         src="assets/images/Trainers/gary-standing.png"
+         class="trainer opponent" alt="Gary"/>
+
+    <!-- Pokémon -->
+    <img id="player-pokemon"
+         src="assets/images/Pokemon/pikachu-battle.gif"
+         class="pokemon player hidden" alt="Pikachu"/>
+    <img id="spark-effect"
+         src="assets/images/Ui/lightning.gif"
+         class="spark hidden" alt="Lightning Spark"/>
+    <img id="opponent-pokemon"
+         src="assets/images/Pokemon/lucario.gif"
+         class="pokemon opponent hidden" alt="Lucario"/>
+    <!-- Aura Sphere (new) -->
+    <img id="aura-effect"
+         src="assets/images/Ui/Aura-Sphere.png"
+         class="hidden"
+         alt="Aura Sphere"/>
+
+    <!-- Pokéballs -->
+    <img id="player-ball"
+         src="assets/images/Trainers/singular-pokeball.png"
+         class="pokeball throw-player hidden" alt="Pokéball"/>
+    <img id="opponent-ball"
+         src="assets/images/Trainers/singular-pokeball.png"
+         class="pokeball throw-opponent hidden" alt="Pokéball"/>
+
+    <!-- HP Bars -->
+    <div class="hp-bars opponent">
+      <span class="hp-label">Lucario Lv63</span>
+      <div class="hp-bar"><div class="hp-fill" id="opponent-hp"></div></div>
+      <img src="assets/images/Trainers/pokeball-sprite.png" class="pokeballs" alt="Pokeballs">
+    </div>
+
+    <div class="hp-bars player">
+      <span class="hp-label">Pikachu Lv42</span>
+      <div class="hp-bar"><div class="hp-fill" id="player-hp"></div></div>
+      <img src="assets/images/Trainers/pokeball-sprite.png" class="pokeballs" alt="Pokeballs">
+    </div>
+
+    <!-- Textbox -->
+    <div id="textbox">
+      <p id="battle-message">Get ready...</p>
+      <div id="move-buttons" style="display:none;">
+        <button data-page="pages/tech-skills.html">Tech Skills</button>
+        <button data-page="pages/experience.html">Experience</button>
+        <button data-page="pages/projects.html">Projects</button>
+        <button data-page="pages/resume-contact.html">Resume & Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <div id="about-section" style="display:none;">
+    <div id="about-content"></div>
+  </div>
+
+  <!-- VICTORY SCREEN -->
+  <div id="victory-screen" style="display:none;">
+    <img src="assets/images/Trainers/victory-screen.png"
+         class="victory-background" alt="Victory Background"/>
+
+    <!-- Top-right content -->
+    <div class="victory-top-right">
+      <img src="assets/images/Trainers/victory-theme.png"
+           class="victory-logo" alt="Victory Logo"/>
+
+      <div id="victory-textbox">
+        The battle is over! You can now freely explore the moves.
+      </div>
+
+      <div id="victory-move-buttons">
+        <button data-page="pages/tech-skills.html">Tech Skills</button>
+        <button data-page="pages/experience.html">Experience</button>
+        <button data-page="pages/projects.html">Projects</button>
+        <button data-page="pages/resume-contact.html">Resume & Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIO -->
+  <audio id="intro-music" src="assets/audio/intro-music.mp3"></audio>
+  <audio id="battle-music" src="assets/audio/battle-music.mp3" loop></audio>
+  <audio id="victory-music" src="assets/audio/victory-music.mp3"></audio>
+
+  <script src="battle-logic.js"></script>
+</body>
+</html>
